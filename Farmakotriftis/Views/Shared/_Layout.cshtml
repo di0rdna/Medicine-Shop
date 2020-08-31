@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+</head>
+<body>
+    <header>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Account" asp-action="Register">Register</a>
+        <a asp-controller="Account" asp-action="Login">Login</a>
+        <a asp-controller="Medicine" asp-action="Index">Medicine</a>
+        <a asp-controller="Basket" asp-action="Index">Basket</a>
+        <a asp-controller="Account" asp-action="Logout">Logout</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <span>Welcome Mr./Ms.  @User.Identity.Name </span>
+        }
+    </header>
+    <section>@RenderBody()</section>
+    <footer>Footer</footer>
+</body>
+</html>
